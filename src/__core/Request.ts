@@ -1,3 +1,3 @@
-import { RequestFetchAdapter } from "./RequestAdapter";
+import { RequestFetchAdapter } from "./RequestFetchAdapter";
 
 export const request: RequestFetchAdapter = new RequestFetchAdapter();

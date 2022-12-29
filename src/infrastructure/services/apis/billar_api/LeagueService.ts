@@ -1,6 +1,6 @@
+import { request } from "../../../../__core/Request";
 import { config } from "../../../../config";
 import { LeagueInterface, LeagueServiceInterface } from "../../../../domain/interfaces/league";
-import { request } from "../Request";
 
 export class LeagueService implements LeagueServiceInterface {
 	async findAll(): Promise<LeagueInterface[]> {
