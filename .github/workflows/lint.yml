@@ -1,6 +1,9 @@
 name: lint
 
-on: push
+on:
+  push:
+    branches:
+      - main
 
 jobs:
   lint:
@@ -12,7 +15,7 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: 16
-          cache: 'npm'
+          cache: "npm"
 
       - name: Install Dependencies
         run: npm install
