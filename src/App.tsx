@@ -1,5 +1,5 @@
-import { Dashboard } from "./_dashboard/Dashboard";
+import { Router } from "./Router";
 
 export function App() {
-	return <Dashboard />;
+	return <Router />;
 }

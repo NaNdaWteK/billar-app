@@ -1,10 +1,7 @@
 import { LeaguesDashboard } from "../_league/LeaguesDashboard";
-import { config } from "../config";
-import { LeagueService } from "../infrastructure/services/apis/billar_api/LeagueService";
+import { LeagueServiceInterface } from "../domain/interfaces/league";
 
-const leagueService = new LeagueService(config.billarApiUrl);
-
-export function Dashboard() {
+export function Dashboard({ leagueService }: { leagueService: LeagueServiceInterface }) {
 	return (
 		<>
 			<LeaguesDashboard service={leagueService} />
