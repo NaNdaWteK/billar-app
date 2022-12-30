@@ -9,4 +9,5 @@ export interface LeagueInterface {
 
 export interface LeagueServiceInterface {
 	findAll(): Promise<LeagueInterface[]>;
+	findById(id: string): Promise<LeagueInterface>;
 }

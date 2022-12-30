@@ -2,7 +2,8 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 import { DashboardFactory } from "./_dashboard/DashBoardFactory";
 import { Layout } from "./_layout/Layout";
-import { LeagueFactory } from "./_league/LeagueFactory";
+import { LeaguesDetailFactory } from "./_league/LeagueDetailFactory";
+import { LeaguesDashboardFactory } from "./_league/LeaguesDashboardFactory";
 
 // eslint-disable-next-line @typescript-eslint/no-unsafe-call, @typescript-eslint/no-unsafe-assignment
 const router = createBrowserRouter([
@@ -16,7 +17,11 @@ const router = createBrowserRouter([
 			},
 			{
 				path: "/leagues",
-				element: LeagueFactory.create(),
+				element: LeaguesDashboardFactory.create(),
+			},
+			{
+				path: "/league/:id",
+				element: LeaguesDetailFactory.create(),
 			},
 		],
 	},

@@ -9,4 +9,10 @@ export class LeagueService implements LeagueServiceInterface {
 
 		return await request.get(url);
 	}
+
+	async findById(id: string): Promise<LeagueInterface> {
+		const url = `${this.billarApiUrl}/v1/league/${id}`;
+
+		return await request.get(url);
+	}
 }

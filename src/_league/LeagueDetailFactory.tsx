@@ -1,11 +1,11 @@
 import { config } from "../config";
 import { LeagueService } from "../infrastructure/services/apis/billar_api/LeagueService";
-import { LeaguesDashboard } from "./LeaguesDashboard";
+import { LeagueDetail } from "./LeagueDetail";
 
 const leagueService = new LeagueService(config.billarApiUrl);
 
-export class LeagueFactory {
+export class LeaguesDetailFactory {
 	static create(): React.ReactElement {
-		return <LeaguesDashboard service={leagueService} />;
+		return <LeagueDetail service={leagueService} />;
 	}
 }
