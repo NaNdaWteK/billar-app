@@ -1,0 +1,26 @@
+section#leagues {
+	display: grid;
+	grid-template-columns: repeat(3, 280px);
+	justify-content: space-between;
+	grid-gap: 5em;
+	margin-top: 100px;
+}
+
+article.league header {
+	position: relative;
+	z-index: 1;
+}
+article.league {
+	background-color: #ece6b0;
+}
+article.league:before {
+	content: "";
+	width: 180px;
+	height: 180px;
+	border-radius: 100%;
+	position: absolute;
+	background-color: #ece6b0;
+	top: 0;
+	transform: translateX(27.5%) translateY(100%);
+	z-index: -1;
+}

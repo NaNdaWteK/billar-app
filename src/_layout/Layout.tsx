@@ -1,3 +1,5 @@
+import "./layout.css";
+
 import { Outlet } from "react-router-dom";
 
 import { ErrorBoundary } from "./ErrorBoundary";
@@ -9,7 +11,9 @@ export function Layout() {
 				<h1>Gestion de Torneos Billar</h1>
 			</header>
 			<ErrorBoundary>
-				<Outlet />
+				<article className="content">
+					<Outlet />
+				</article>
 			</ErrorBoundary>
 		</>
 	);
