@@ -1,18 +1,49 @@
-section#leagues {
+section.leagues {
 	display: grid;
 	grid-template-columns: repeat(3, 280px);
 	justify-content: space-between;
-	grid-gap: 5em;
+	grid-gap: 7em;
 	margin-top: 100px;
 }
 
 article.league header {
 	position: relative;
 	z-index: 1;
-  text-align: center;
+	text-align: center;
+	font-size: 1em;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	padding: 1em;
+	background-color: #2d2d2d;
+	color: #fff;
+	border-radius: 0 0 0.5em 0.5em;
+	text-shadow: 1px 1px 1px red, 0 0 18px #ece6b0;
 }
-article.league {
-	background-color: #ece6b0;
-  z-index: 2;
+article.league header::first-letter {
+	font-weight: 500;
+	font-size: 1.3em;
 }
 
+article.league::before {
+	content: " ";
+	width: 180px;
+	height: 180px;
+	background-color: red;
+	position: absolute;
+	top: -90px;
+	left: 50px;
+	border-radius: 50%;
+	background-image: url("../assets/images/avatar.png");
+	background-size: 100px;
+	background-repeat: no-repeat;
+	background-position: 40px 4px;
+}
+
+article.league {
+	position: relative;
+	background-color: #ece6b0;
+	z-index: 2;
+	padding: 1em;
+	border-radius: 1em 1em 1em 0;
+}
