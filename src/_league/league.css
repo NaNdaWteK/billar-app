@@ -9,18 +9,10 @@ section#leagues {
 article.league header {
 	position: relative;
 	z-index: 1;
+  text-align: center;
 }
 article.league {
 	background-color: #ece6b0;
+  z-index: 2;
 }
-article.league:before {
-	content: "";
-	width: 180px;
-	height: 180px;
-	border-radius: 100%;
-	position: absolute;
-	background-color: #ece6b0;
-	top: 0;
-	transform: translateX(27.5%) translateY(100%);
-	z-index: -1;
-}
+
