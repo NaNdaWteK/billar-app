@@ -1,6 +1,6 @@
 section.leagues {
 	display: grid;
-	grid-template-columns: repeat(3, 280px);
+	grid-template-columns: repeat(3, 300px);
 	justify-content: space-between;
 	grid-gap: 7em;
 	margin-top: 100px;
@@ -46,4 +46,31 @@ article.league {
 	z-index: 2;
 	padding: 1em;
 	border-radius: 1em 1em 1em 0;
+	max-height: 762px;
+}
+
+article.league table {
+	width: 100%; /* Set the width of the table */
+	border-collapse: collapse; /* Collapse the border of the table */
+}
+article.league th,
+td {
+	border: 2px solid #ddd; /* Add a border to the cells */
+	text-align: left; /* Align the text to the left */
+	padding: 8px; /* Add padding to the cells */
+}
+article.league tbody tr:nth-child(odd) {
+	background-color: #444; /* Add a background color to every even row */
+	color: white;
+}
+
+article.league td:first-child {
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	max-width: 100px;
+}
+article.league td:last-child {
+	color: #00ae23;
+	font-weight: bolder;
 }

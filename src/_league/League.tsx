@@ -1,4 +1,6 @@
+/* eslint-disable @typescript-eslint/no-unnecessary-condition */
 import { LeagueInterface } from "../domain/interfaces/league";
+import { trans } from "../domain/translations";
 
 export function League({ league }: { league: LeagueInterface }) {
 	return (
@@ -7,11 +9,30 @@ export function League({ league }: { league: LeagueInterface }) {
 				{league.name} - {league.type}
 			</header>
 			<hr />
-			<p>
-				{
-					"Bola-8 es un juego de tiro anunciado jugado con una bola blanca y quince bolas de color numeradas del 1 al 15. Un jugador debe embocar el grupo de bolas del 1 al 7 (lisas), y el otro jugador el grupo del 9 al 15 (rayadas). El jugador que emboque primero su grupo de bolas, y luego la bola 8 legalmente, gana la partida."
-				}
-			</p>
+			<table>
+				<thead>
+					<tr>
+						<th>{trans("leagues.league.player")}</th>
+						<th>{trans("leagues.league.victories")}</th>
+						<th>{trans("leagues.league.losses")}</th>
+						<th>{trans("leagues.league.percent")}</th>
+					</tr>
+				</thead>
+				<tbody>
+					{league.players &&
+						league.players.map((player) => {
+							return (
+								<tr key={player.id}>
+									<td>{player.name}</td>
+									<td>{player.wins}</td>
+									<td>{player.lost}</td>
+									<td>{player.percentatge}%</td>
+								</tr>
+							);
+						})}
+					<tr></tr>
+				</tbody>
+			</table>
 		</article>
 	);
 }

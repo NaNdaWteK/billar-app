@@ -3,22 +3,97 @@ import "react-loading-skeleton/dist/skeleton.css";
 
 import Skeleton, { SkeletonTheme } from "react-loading-skeleton";
 
+import { trans } from "../domain/translations";
+
 function LeagueSkeleton() {
 	return (
-		<article className="league">
+		<article className="league" style={{ height: "304px" }}>
 			<header>
 				<Skeleton inline={true} width="70%" />
 			</header>
 			<hr />
-			<p style={{ height: "230px", paddingLeft: "1em" }}>
-				<Skeleton width="70%" style={{ marginBottom: "1em" }} />
-				<Skeleton width="60%" style={{ marginBottom: "1em" }} />
-				<Skeleton width="50%" style={{ marginBottom: "1em" }} />
-				<Skeleton width="70%" style={{ marginBottom: "1em" }} />
-				<Skeleton width="50%" style={{ marginBottom: "1em" }} />
-				<Skeleton width="50%" style={{ marginBottom: "1em" }} />
-				<Skeleton width="70%" style={{ marginBottom: "1em" }} />
-			</p>
+			<table style={{ paddingLeft: "1em" }}>
+				<thead>
+					<tr>
+						<th>{trans("leagues.league.player")}</th>
+						<th>{trans("leagues.league.victories")}</th>
+						<th>{trans("leagues.league.losses")}</th>
+						<th>{trans("leagues.league.percent")}</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>
+							<Skeleton width="80%" />
+						</td>
+						<td>
+							<Skeleton width="80%" />
+						</td>
+						<td>
+							<Skeleton width="80%" />
+						</td>
+						<td>
+							<Skeleton width="40%" inline={true} />%
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<Skeleton width="80%" />
+						</td>
+						<td>
+							<Skeleton width="80%" />
+						</td>
+						<td>
+							<Skeleton width="80%" />
+						</td>
+						<td>
+							<Skeleton width="40%" inline={true} />%
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<Skeleton width="80%" />
+						</td>
+						<td>
+							<Skeleton width="80%" />
+						</td>
+						<td>
+							<Skeleton width="80%" />
+						</td>
+						<td>
+							<Skeleton width="40%" inline={true} />%
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<Skeleton width="80%" />
+						</td>
+						<td>
+							<Skeleton width="80%" />
+						</td>
+						<td>
+							<Skeleton width="80%" />
+						</td>
+						<td>
+							<Skeleton width="40%" inline={true} />%
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<Skeleton width="80%" />
+						</td>
+						<td>
+							<Skeleton width="80%" />
+						</td>
+						<td>
+							<Skeleton width="80%" />
+						</td>
+						<td>
+							<Skeleton width="40%" inline={true} />%
+						</td>
+					</tr>
+				</tbody>
+			</table>
 		</article>
 	);
 }

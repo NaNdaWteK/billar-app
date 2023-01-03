@@ -12,10 +12,8 @@ export function useBillarApiLeagues(service: LeagueServiceInterface): {
 	useEffect(() => {
 		setIsLoading(true);
 		void service.findAll().then((response) => {
-			// setTimeout(() => {
 			setLeagues(response);
 			setIsLoading(false);
-			// }, 10000);
 		});
 	}, [service]);
 

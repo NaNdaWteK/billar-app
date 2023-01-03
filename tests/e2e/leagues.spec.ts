@@ -6,14 +6,16 @@ describe("LeaguesDashboard", () => {
 		cy.visit("/leagues");
 
 		cy.findByText("Liga 2022 - Bola 8").should("exist");
+		cy.findByText("Inma").should("exist");
 	});
 });
 
 describe("League Detail", () => {
 	it("successfully loads", () => {
-		cy.intercept(`/api/v1/league/${leagues[0].id}`, leagues[0]);
-		cy.visit(`/league/${leagues[0].id}`);
+		cy.intercept(`/api/v1/league/${leagues[1].id}`, leagues[1]);
+		cy.visit(`/league/${leagues[1].id}`);
 
-		cy.findByText("Liga 2022 - Bola 8").should("exist");
+		cy.findByText("Liga 2023 - Carambola").should("exist");
+		cy.findByText("Inma").should("exist");
 	});
 });
