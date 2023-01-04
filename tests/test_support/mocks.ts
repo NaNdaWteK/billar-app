@@ -13,6 +13,7 @@ export const leagues = [
 				wins: 8,
 				lost: 2,
 				percentatge: 80,
+				avatar: "1.png",
 			},
 			{
 				id: "2",
@@ -58,6 +59,7 @@ export const leagues = [
 				wins: 8,
 				lost: 2,
 				percentatge: 80,
+				avatar: "2.png",
 			},
 			{
 				id: "2",

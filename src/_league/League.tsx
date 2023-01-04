@@ -6,7 +6,8 @@ import { useSetAvatar } from "./_useSetAvatar";
 
 export function League({ league, leagueIndex }: { league: LeagueInterface; leagueIndex: number }) {
 	// eslint-disable-next-line @typescript-eslint/no-unsafe-call
-	useSetAvatar(leagueIndex, league.players[0].avatar as string);
+	const avatar = league.players?.length ? league.players[0].avatar : "";
+	useSetAvatar(leagueIndex, avatar as string);
 
 	return (
 		<article className="league">
