@@ -34,7 +34,7 @@ article.league::before {
 	top: -90px;
 	left: 50px;
 	border-radius: 50%;
-	background-image: url("../assets/images/avatar.png");
+	background-image: var(--avatar);
 	background-size: 100px;
 	background-repeat: no-repeat;
 	background-position: 40px 4px;

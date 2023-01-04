@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unnecessary-condition */
 import { useMemo } from "react";
 import { useParams } from "react-router-dom";
 
@@ -14,7 +15,12 @@ export function LeagueDetail({ service }: { service: LeagueServiceInterface }) {
 	const { league } = useBillarApiLeague(service, memoizedId);
 
 	return (
-		// eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
-		<>{league ? <League league={league} /> : <span>{trans("league.detail.noleague")}</span>}</>
+		<>
+			{league ? (
+				<League league={league} leagueIndex={0} />
+			) : (
+				<span>{trans("league.detail.noleague")}</span>
+			)}
+		</>
 	);
 }

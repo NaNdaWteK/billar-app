@@ -22,8 +22,8 @@ export function LeaguesDashboard({ service }: { service: LeagueServiceInterface 
 				</div>
 			) : (
 				<section className="leagues">
-					{leagues.map((league: LeagueInterface) => {
-						return <League key={league.id} league={league} />;
+					{leagues.map((league: LeagueInterface, index) => {
+						return <League key={league.id} leagueIndex={index} league={league} />;
 					})}
 				</section>
 			)}

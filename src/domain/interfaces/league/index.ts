@@ -4,6 +4,7 @@ export interface PlayersForLeaguesInterface {
 	lost: number;
 	percentatge: number;
 	id: string;
+	avatar?: string;
 }
 
 export interface LeagueInterface {
