@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 
 import { LeagueInterface, LeagueServiceInterface } from "../domain/interfaces/league";
+import { dispatchPageLoaded } from "../events";
 
 export function useBillarApiLeagues(service: LeagueServiceInterface): {
 	leagues: LeagueInterface[];
@@ -14,6 +15,7 @@ export function useBillarApiLeagues(service: LeagueServiceInterface): {
 		void service.findAll().then((response) => {
 			setLeagues(response);
 			setIsLoading(false);
+			dispatchPageLoaded();
 		});
 	}, []);
 
