@@ -32,7 +32,7 @@ article.league::before {
 	background-color: red;
 	position: absolute;
 	top: -90px;
-	left: 50px;
+	left: 60px;
 	border-radius: 50%;
 	background-image: var(--avatar);
 	background-size: 100px;

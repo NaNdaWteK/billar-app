@@ -1,5 +1,10 @@
+import { TitleContextProvider } from "./_layout/_TitleContextProvider";
 import { Router } from "./Router";
 
 export function App() {
-	return <Router />;
+	return (
+		<TitleContextProvider>
+			<Router />
+		</TitleContextProvider>
+	);
 }

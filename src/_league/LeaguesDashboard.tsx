@@ -1,5 +1,8 @@
 import "./league.css";
 
+import { useEffect } from "react";
+
+import { useTitleContextProvider } from "../_layout/_TitleContextProvider";
 import { LeagueInterface, LeagueServiceInterface } from "../domain/interfaces/league";
 import { trans } from "../domain/translations";
 import { useBillarApiLeagues } from "./_useBillarApiLeagues";
@@ -8,6 +11,10 @@ import { LeaguesSkeleton } from "./LeaguesSkeleton";
 
 export function LeaguesDashboard({ service }: { service: LeagueServiceInterface }) {
 	const { leagues, isLoading } = useBillarApiLeagues(service);
+	const { changeTitle } = useTitleContextProvider();
+	useEffect(() => {
+		changeTitle(trans("leagues.title"));
+	}, []);
 
 	return (
 		<>

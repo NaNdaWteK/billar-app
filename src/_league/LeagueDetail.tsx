@@ -1,7 +1,8 @@
 /* eslint-disable @typescript-eslint/no-unnecessary-condition */
-import { useMemo } from "react";
+import { useEffect, useMemo } from "react";
 import { useParams } from "react-router-dom";
 
+import { useTitleContextProvider } from "../_layout/_TitleContextProvider";
 import { LeagueServiceInterface } from "../domain/interfaces/league";
 import { trans } from "../domain/translations";
 import { useBillarApiLeague } from "./_useBillarApiLeague";
@@ -13,6 +14,10 @@ export function LeagueDetail({ service }: { service: LeagueServiceInterface }) {
 	const memoizedId = useMemo(() => id, [id]);
 
 	const { league } = useBillarApiLeague(service, memoizedId);
+	const { changeTitle } = useTitleContextProvider();
+	useEffect(() => {
+		changeTitle(`${league.name}`);
+	}, [league]);
 
 	return (
 		<>

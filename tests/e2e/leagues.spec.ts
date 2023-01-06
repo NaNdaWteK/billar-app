@@ -7,6 +7,7 @@ describe("LeaguesDashboard", () => {
 
 		cy.findByText("Liga 2022 - Bola 8").should("exist");
 		cy.findByText("Inma").should("exist");
+		cy.findByText("Ligas").should("exist");
 	});
 });
 

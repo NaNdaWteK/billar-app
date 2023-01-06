@@ -7,6 +7,7 @@ const translations: any = {
 	// eslint-disable-next-line prettier/prettier
   'es': {
 		"layout.title": "Gestion de Torneos Billar",
+		"leagues.title": "Ligas",
 		"leagues.league.noleagues": "No hay ligas creadas",
 		"leagues.league.player": "Jugador",
 		"leagues.league.victories": "V",
