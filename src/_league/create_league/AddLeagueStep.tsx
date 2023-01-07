@@ -44,8 +44,8 @@ export function AddLeagueStep<T extends { [key: string]: string }>({
 						value={formData.type || "Selecciona el tipo de liga"}
 						onChange={handleChange}
 					>
-						<option value="default">Selecciona el tipo de liga</option>
-						<option value="Bola 8">Bola 8</option>
+						<option value="default">{trans("leagues.select.option.default")}</option>
+						<option value="Bola 8">{trans("leagues.select.option.bola8")}</option>
 					</select>
 				</label>
 			</div>

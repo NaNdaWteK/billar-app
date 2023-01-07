@@ -27,7 +27,7 @@ article.league header::first-letter {
 section.create-league-form .navigation {
 	position: absolute;
 	bottom: 0.6em;
-	right: 1.8em;
+	right: 1.1em;
 }
 section.create-league-form .navigation button {
 	height: 36px;
@@ -35,6 +35,7 @@ section.create-league-form .navigation button {
 	border: none;
 	border-radius: 0.4em;
 	padding: 0 1em;
+  border: 1px solid #fff;
 }
 
 section.create-league-form .navigation button.finish {
@@ -47,17 +48,17 @@ section.create-league-form .navigation button.finish {
 
 section.create-league-form {
 	box-shadow: 1px 1px 1px #ece6b0, 0 0 18px #ece6b0;
-	padding: 2em;
+	padding: 1.7em;
 	border: 2px solid #00ae23;
-	border-radius: 2em;
+	border-radius: 1em;
 	background-color: #444;
 	position: fixed;
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%, -50%);
 	z-index: 3;
-	min-width: 313px;
-	max-width: 313px;
+	min-width: 227px;
+	max-width: 227px;
 	min-height: 213px;
 }
 section .input-text {
@@ -65,13 +66,13 @@ section .input-text {
 	height: 36px;
 }
 section .select {
-	width: 102%;
+	width: 104%;
 	height: 40px;
 }
 section.create-league-form > div > h3 {
 	position: relative;
 	margin-top: -0.8em;
-	font-size: 1em;
+	font-size: .8em;
 	text-align: center;
 }
 

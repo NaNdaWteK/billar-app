@@ -16,9 +16,9 @@ export function FinishAddLeagueStep<T extends { [key: string]: string }>({
 		<div>
 			<h3>{trans("leagues.form.creating")}</h3>
 			<article className="finish-results">
-				<p>Estas apunto de crear la liga</p>
+				<p>{trans("leagues.create.resume.p1")}</p>
 				<p>{formData.name}</p>
-				<p>del tipo {formData.type === "default" ? "Bola 8" : formData.type}</p>
+				<p>{trans("leagues.create.resume.p2")}{formData.type === "default" ? "Bola 8" : formData.type}</p>
 			</article>
 			<Navigation
 				prev={prev}
