@@ -2,8 +2,8 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 import { DashboardFactory } from "./_dashboard/DashBoardFactory";
 import { Layout } from "./_layout/Layout";
-import { LeaguesDetailFactory } from "./_league/LeagueDetailFactory";
-import { LeaguesDashboardFactory } from "./_league/LeaguesDashboardFactory";
+import { LeaguesDashboardFactory } from "./_league/dashboard/LeaguesDashboardFactory";
+import { LeaguesDetailFactory } from "./_league/league_detail/LeagueDetailFactory";
 
 // eslint-disable-next-line @typescript-eslint/no-unsafe-call, @typescript-eslint/no-unsafe-assignment
 const router = createBrowserRouter([

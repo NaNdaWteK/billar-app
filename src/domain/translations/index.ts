@@ -3,11 +3,14 @@
 
 import { config } from "../../config";
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 const translations: any = {
 	// eslint-disable-next-line prettier/prettier
   'es': {
 		"layout.title": "Gestion de Torneos Billar",
 		"leagues.title": "Ligas",
+		"leagues.form.create": "Crear una Liga",
+		"leagues.form.creating": "Crear Liga",
 		"leagues.league.noleagues": "No hay ligas creadas",
 		"leagues.league.player": "Jugador",
 		"leagues.league.victories": "V",

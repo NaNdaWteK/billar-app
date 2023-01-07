@@ -1,8 +1,8 @@
 import { screen } from "@testing-library/react";
 import { mock } from "jest-mock-extended";
 
-import { LeagueDetail } from "../src/_league/LeagueDetail";
-import { LeaguesDashboard } from "../src/_league/LeaguesDashboard";
+import { LeaguesDashboard } from "../src/_league/dashboard/LeaguesDashboard";
+import { LeagueDetail } from "../src/_league/league_detail/LeagueDetail";
 import { LeagueServiceInterface } from "../src/domain/interfaces/league";
 import { leagues } from "./test_support/mocks";
 import { renderWithRouter } from "./test_support/RenderWithRouter";

@@ -10,5 +10,5 @@ export function useSetAvatar(leagueIndex: number, image: string): void {
 			const replaced = `url("http://localhost:8000/images/${avatar}")`;
 			element.style.setProperty("--avatar", replaced);
 		}
-	}, [memoizedAvatar]);
+	}, [memoizedAvatar, element, image, avatar]);
 }

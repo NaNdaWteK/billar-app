@@ -1,5 +1,5 @@
-import { config } from "../config";
-import { LeagueService } from "../infrastructure/services/apis/billar_api/LeagueService";
+import { config } from "../../config";
+import { LeagueService } from "../../infrastructure/services/apis/billar_api/LeagueService";
 import { LeagueDetail } from "./LeagueDetail";
 
 const leagueService = new LeagueService(config.billarApiUrl);

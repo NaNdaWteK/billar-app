@@ -2,11 +2,11 @@
 import { useEffect, useMemo } from "react";
 import { useParams } from "react-router-dom";
 
-import { useTitleContextProvider } from "../_layout/_TitleContextProvider";
-import { LeagueServiceInterface } from "../domain/interfaces/league";
-import { trans } from "../domain/translations";
-import { useBillarApiLeague } from "./_useBillarApiLeague";
-import { League } from "./League";
+import { useTitleContextProvider } from "../../_layout/_TitleContextProvider";
+import { LeagueServiceInterface } from "../../domain/interfaces/league";
+import { trans } from "../../domain/translations";
+import { useBillarApiLeague } from "../_useBillarApiLeague";
+import { League } from "../league/League";
 
 export function LeagueDetail({ service }: { service: LeagueServiceInterface }) {
 	// eslint-disable-next-line @typescript-eslint/no-unsafe-call
@@ -17,7 +17,7 @@ export function LeagueDetail({ service }: { service: LeagueServiceInterface }) {
 	const { changeTitle } = useTitleContextProvider();
 	useEffect(() => {
 		changeTitle(`${league.name}`);
-	}, [league]);
+	}, [league, changeTitle]);
 
 	return (
 		<>

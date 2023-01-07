@@ -3,7 +3,7 @@ import "react-loading-skeleton/dist/skeleton.css";
 
 import Skeleton, { SkeletonTheme } from "react-loading-skeleton";
 
-import { trans } from "../domain/translations";
+import { trans } from "../../domain/translations";
 
 function LeagueSkeleton() {
 	return (

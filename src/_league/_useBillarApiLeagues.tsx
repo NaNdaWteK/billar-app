@@ -17,7 +17,7 @@ export function useBillarApiLeagues(service: LeagueServiceInterface): {
 			setIsLoading(false);
 			dispatchPageLoaded();
 		});
-	}, []);
+	}, [service]);
 
 	return { leagues, isLoading };
 }

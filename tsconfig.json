@@ -17,5 +17,6 @@
 		"noEmit": true,
 		"jsx": "react-jsx"
 	},
-	"include": ["src", "tests", "jest.config.js", "cypress.config.ts", "src/_dashboard"]
+	"include": ["src", "tests", "jest.config.js", "cypress.config.ts", "src/_dashboard"],
+	"typeRoots": ["node_modules/@types", "src/@types"]
 }

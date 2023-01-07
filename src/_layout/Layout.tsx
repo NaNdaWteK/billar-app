@@ -9,7 +9,7 @@ import { ErrorBoundary } from "./ErrorBoundary";
 import TopBarProgressByLocation from "./TopBarProgresByLocation";
 
 export function Layout() {
-	const { title } = useTitleContextProvider();
+	const { title, component } = useTitleContextProvider();
 	useEffect(() => {
 		if (title) {
 			const element = document.querySelector("h2.title") as unknown as HTMLTitleElement;
@@ -19,13 +19,17 @@ export function Layout() {
 
 	return (
 		<>
+			<aside className="form-background"></aside>
 			<TopBarProgressByLocation />
 			<header>
 				<h1>{trans("layout.title")}</h1>
 			</header>
 			<ErrorBoundary>
 				<article className="content">
-					<h2 className="title">{title}</h2>
+					<h2 className="title">
+						{title}
+						{component}
+					</h2>
 					<Outlet />
 				</article>
 			</ErrorBoundary>

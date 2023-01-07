@@ -1,8 +1,8 @@
 /* eslint-disable @typescript-eslint/no-unnecessary-condition */
 
-import { LeagueInterface } from "../domain/interfaces/league";
-import { trans } from "../domain/translations";
-import { useSetAvatar } from "./_useSetAvatar";
+import { LeagueInterface } from "../../domain/interfaces/league";
+import { trans } from "../../domain/translations";
+import { useSetAvatar } from "../_useSetAvatar";
 
 export function League({ league, leagueIndex }: { league: LeagueInterface; leagueIndex: number }) {
 	// eslint-disable-next-line @typescript-eslint/no-unsafe-call
