@@ -2,14 +2,16 @@
 import { useState } from 'react';
 
 export function useStepForm(): {
-	showMultiStep: boolean;
-	handleShowMultiStep: () => void;
-	formState: { [key: string]: string };
-	setFormState: React.Dispatch<React.SetStateAction<{}>>;
-	} {
+  showMultiStep: boolean;
+  handleShowMultiStep: () => void;
+  formState: { [key: string]: string };
+  setFormState: React.Dispatch<React.SetStateAction<{}>>;
+  } {
   const [showMultiStep, setShowMultiStep] = useState(false);
   function handleShowMultiStep() {
-    const element = document.querySelectorAll('.form-background')[0] as HTMLDivElement;
+    const element = document.querySelectorAll(
+      '.form-background'
+    )[0] as HTMLDivElement;
     element.style.setProperty('visibility', 'visible');
     element.addEventListener('click', () => {
       element.style.setProperty('visibility', 'hidden');

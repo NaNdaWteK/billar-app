@@ -1,5 +1,8 @@
 import { request } from '../../../../__core/Request';
-import { LeagueInterface, LeagueServiceInterface } from '../../../../domain/interfaces/league';
+import {
+  LeagueInterface,
+  LeagueServiceInterface,
+} from '../../../../domain/interfaces/league';
 import { leagues } from './mocks';
 
 export class LeagueService implements LeagueServiceInterface {

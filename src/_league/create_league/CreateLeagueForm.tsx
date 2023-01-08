@@ -7,8 +7,13 @@ import { LeagueServiceInterface } from '../../domain/interfaces/league';
 import { AddLeagueStep } from './AddLeagueStep';
 import { FinishAddLeagueStep } from './FinishAddLeagueStep';
 
-export function CreateLeagueForm({ service }: { service: LeagueServiceInterface }) {
-  const { showMultiStep, handleShowMultiStep, formState, setFormState } = useStepForm();
+export function CreateLeagueForm({
+  service,
+}: {
+  service: LeagueServiceInterface;
+}) {
+  const { showMultiStep, handleShowMultiStep, formState, setFormState } =
+    useStepForm();
   const handleSubmit = async () => {
     if (formState.name && formState.type) {
       if (formState.type === 'default') {
@@ -28,8 +33,14 @@ export function CreateLeagueForm({ service }: { service: LeagueServiceInterface 
         <section className="form create-league-form">
           <StepsProvider>
             <Steps>
-              <AddLeagueStep formData={formState} updateFormData={setFormState} />
-              <FinishAddLeagueStep formData={formState} handleSubmit={handleSubmit} />
+              <AddLeagueStep
+                formData={formState}
+                updateFormData={setFormState}
+              />
+              <FinishAddLeagueStep
+                formData={formState}
+                handleSubmit={handleSubmit}
+              />
             </Steps>
           </StepsProvider>
         </section>

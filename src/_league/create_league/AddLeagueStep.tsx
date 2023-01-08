@@ -11,7 +11,9 @@ export function AddLeagueStep<T extends { [key: string]: string }>({
   updateFormData,
 }: StepProps<T>) {
   const { next, prev, hasNext, hasPrev } = useSteps();
-  const handleChange = (event: ChangeEvent<HTMLInputElement> | ChangeEvent<HTMLSelectElement>) => {
+  const handleChange = (
+    event: ChangeEvent<HTMLInputElement> | ChangeEvent<HTMLSelectElement>
+  ) => {
     updateFormData &&
       updateFormData({
         ...formData,
@@ -44,8 +46,12 @@ export function AddLeagueStep<T extends { [key: string]: string }>({
             value={formData.type}
             onChange={handleChange}
           >
-            <option value="default">{trans('leagues.select.option.default')}</option>
-            <option value="Bola 8">{trans('leagues.select.option.bola8')}</option>
+            <option value="default">
+              {trans('leagues.select.option.default')}
+            </option>
+            <option value="Bola 8">
+              {trans('leagues.select.option.bola8')}
+            </option>
           </select>
         </label>
       </div>

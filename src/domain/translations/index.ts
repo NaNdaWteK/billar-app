@@ -1,7 +1,7 @@
 import { config } from '../../config';
 
-const translations: { [key: string]: { [key: string]: string }} = {
-  'es': {
+const translations: { [key: string]: { [key: string]: string } } = {
+  es: {
     'layout.title': 'Gestion de Torneos Billar',
     'leagues.title': 'Ligas',
     'leagues.form.create': 'Crear Liga',
@@ -17,6 +17,9 @@ const translations: { [key: string]: { [key: string]: string }} = {
     'leagues.create.resume.p2': 'del tipo ',
   },
 };
-export const trans = (item: string, language = config.language || 'es'): string => {
+export const trans = (
+  item: string,
+  language = config.language || 'es'
+): string => {
   return translations[language][item];
 };

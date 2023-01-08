@@ -12,7 +12,11 @@ const TitleContext = createContext<{
       component: <></>,
     });
 
-export function TitleContextProvider({ children }: { children: React.ReactElement }) {
+export function TitleContextProvider({
+  children,
+}: {
+  children: React.ReactElement;
+}) {
   const [title, setTitle] = useState<string>('');
   const [component, setComponent] = useState<React.ReactElement>(<></>);
   const changeTitle = (title: string, titleActionElement = <></>) => {

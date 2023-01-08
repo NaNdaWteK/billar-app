@@ -20,7 +20,9 @@ export function FinishAddLeagueStep<T extends { [key: string]: string }>({
         <p>{formData.name}</p>
         <p>
           {trans('leagues.create.resume.p2')}
-          {!formData.type || formData.type === 'default' ? 'Bola 8' : formData.type}
+          {!formData.type || formData.type === 'default'
+            ? 'Bola 8'
+            : formData.type}
         </p>
       </article>
       <Navigation

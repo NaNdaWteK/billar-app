@@ -1,7 +1,7 @@
 export interface AppConfig {
-	environment: string;
-	billarApiUrl: string;
-	language: string;
+  environment: string;
+  billarApiUrl: string;
+  language: string;
 }
 export const config: AppConfig = {
   environment: process.env.REACT_APP_ENVIRONMENT as string,

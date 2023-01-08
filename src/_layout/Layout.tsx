@@ -12,7 +12,9 @@ export function Layout() {
   const { title, component } = useTitleContextProvider();
   useEffect(() => {
     if (title) {
-      const element = document.querySelector('h2.title') as unknown as HTMLTitleElement;
+      const element = document.querySelector(
+        'h2.title'
+      ) as unknown as HTMLTitleElement;
       element.style.setProperty('--title-width', `-${title.length}%`);
     }
   }, [title]);

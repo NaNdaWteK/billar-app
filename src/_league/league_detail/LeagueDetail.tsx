@@ -9,7 +9,6 @@ import { useBillarApiLeague } from '../_useBillarApiLeague';
 import { League } from '../league/League';
 
 export function LeagueDetail({ service }: { service: LeagueServiceInterface }) {
-  // eslint-disable-next-line @typescript-eslint/no-unsafe-call
   const { id } = useParams() as { id: string };
   const memoizedId = useMemo(() => id, [id]);
 

@@ -6,7 +6,10 @@ export class RequestFetchAdapter {
     const response = await fetch(path, config);
 
     if (!response.ok) {
-      throw new HTTPException(response.statusText, { status: response.status, url: response.url });
+      throw new HTTPException(response.statusText, {
+        status: response.status,
+        url: response.url,
+      });
     }
 
     return response.json();
@@ -18,13 +21,21 @@ export class RequestFetchAdapter {
     return await this.http<T>(path, options);
   }
 
-  async post<T, U>(path: string, body: T, config = { mode: 'cors', headers: {'Content-Type': 'application/json'}}): Promise<U> {
+  async post<T, U>(
+    path: string,
+    body: T,
+    config = { mode: 'cors', headers: { 'Content-Type': 'application/json' } }
+  ): Promise<U> {
     const options = { method: 'post', body: JSON.stringify(body), ...config };
 
     return await this.http<U>(path, options);
   }
 
-  async put<T, U>(path: string, body: T, config = { mode: 'cors', headers: {'Content-Type': 'application/json'}}): Promise<U> {
+  async put<T, U>(
+    path: string,
+    body: T,
+    config = { mode: 'cors', headers: { 'Content-Type': 'application/json' } }
+  ): Promise<U> {
     const options = { method: 'put', body: JSON.stringify(body), ...config };
 
     return await this.http<U>(path, options);

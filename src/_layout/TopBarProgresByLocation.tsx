@@ -17,7 +17,8 @@ const TopBarProgressByLocation = () => {
   useEffect(() => {
     setPreviousLocation(location.pathname);
     setProgress(true);
-    const hasClickedOnALinkToTheCurrentPage = location.pathname === previousLocation;
+    const hasClickedOnALinkToTheCurrentPage =
+      location.pathname === previousLocation;
     if (hasClickedOnALinkToTheCurrentPage) {
       setPreviousLocation('');
     }

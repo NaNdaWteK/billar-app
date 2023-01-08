@@ -1,133 +1,133 @@
 section.leagues {
-	display: grid;
-	grid-template-columns: repeat(3, 300px);
-	justify-content: center;
-	grid-gap: 7em;
-	margin-top: 100px;
+  display: grid;
+  grid-template-columns: repeat(3, 300px);
+  justify-content: center;
+  grid-gap: 7em;
+  margin-top: 100px;
 }
 
 article.league header {
-	position: relative;
-	z-index: 1;
-	text-align: center;
-	font-size: 1em;
-	white-space: nowrap;
-	overflow: hidden;
-	text-overflow: ellipsis;
-	padding: 1em;
-	background-color: #2d2d2d;
-	color: #fff;
-	border-radius: 0 0 0.5em 0.5em;
-	text-shadow: 1px 1px 1px red, 0 0 18px #ece6b0;
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  font-size: 1em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding: 1em;
+  background-color: #2d2d2d;
+  color: #fff;
+  border-radius: 0 0 0.5em 0.5em;
+  text-shadow: 1px 1px 1px red, 0 0 18px #ece6b0;
 }
 article.league header::first-letter {
-	font-weight: 500;
-	font-size: 1.3em;
+  font-weight: 500;
+  font-size: 1.3em;
 }
 section.create-league-form .navigation {
-	position: absolute;
-	bottom: 0.6em;
-	right: 1.1em;
+  position: absolute;
+  bottom: 0.6em;
+  right: 1.1em;
 }
 section.create-league-form .navigation button {
-	height: 36px;
-	background-color: #ece6b0;
-	border: none;
-	border-radius: 0.4em;
-	padding: 0 1em;
+  height: 36px;
+  background-color: #ece6b0;
+  border: none;
+  border-radius: 0.4em;
+  padding: 0 1em;
   border: 1px solid #fff;
 }
 
 section.create-league-form .navigation button.finish {
-	background-color: #00ae23;
-	color: #fff;
-	height: 48px;
-	padding: 0 2em;
-	border: 2px solid #fff;
+  background-color: #00ae23;
+  color: #fff;
+  height: 48px;
+  padding: 0 2em;
+  border: 2px solid #fff;
 }
 
 section.create-league-form {
-	box-shadow: 1px 1px 1px #ece6b0, 0 0 18px #ece6b0;
-	padding: 1.7em;
-	border: 2px solid #00ae23;
-	border-radius: .3em;
-	background-color: #444;
-	position: fixed;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
-	z-index: 3;
-	min-width: 227px;
-	max-width: 227px;
-	min-height: 213px;
+  box-shadow: 1px 1px 1px #ece6b0, 0 0 18px #ece6b0;
+  padding: 1.7em;
+  border: 2px solid #00ae23;
+  border-radius: 0.3em;
+  background-color: #444;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 3;
+  min-width: 227px;
+  max-width: 227px;
+  min-height: 213px;
 }
 section .input-text {
-	width: 100%;
-	height: 36px;
+  width: 100%;
+  height: 36px;
 }
 section .select {
-	width: 104%;
-	height: 40px;
+  width: 104%;
+  height: 40px;
 }
 section.create-league-form > div > h3 {
-	position: relative;
-	margin-top: -0.8em;
-	font-size: .8em;
-	text-align: center;
+  position: relative;
+  margin-top: -0.8em;
+  font-size: 0.8em;
+  text-align: center;
 }
 
 .input-between {
-	margin-bottom: 0.4em;
+  margin-bottom: 0.4em;
 }
 .input-between:last-child {
-	margin-bottom: 0;
+  margin-bottom: 0;
 }
 article.league::before {
-	content: " ";
-	width: 180px;
-	height: 180px;
-	background-color: red;
-	position: absolute;
-	top: -90px;
-	left: 60px;
-	border-radius: 50%;
-	background-image: var(--avatar);
-	background-size: 100px;
-	background-repeat: no-repeat;
-	background-position: 40px 4px;
+  content: ' ';
+  width: 180px;
+  height: 180px;
+  background-color: red;
+  position: absolute;
+  top: -90px;
+  left: 60px;
+  border-radius: 50%;
+  background-image: var(--avatar);
+  background-size: 100px;
+  background-repeat: no-repeat;
+  background-position: 40px 4px;
 }
 
 article.league {
-	position: relative;
-	background-color: #ece6b0;
-	z-index: 2;
-	padding: 1em;
-	border-radius: 1em 1em 1em 0;
-	max-height: 762px;
+  position: relative;
+  background-color: #ece6b0;
+  z-index: 2;
+  padding: 1em;
+  border-radius: 1em 1em 1em 0;
+  max-height: 762px;
 }
 
 article.league table {
-	width: 100%; /* Set the width of the table */
-	border-collapse: collapse; /* Collapse the border of the table */
+  width: 100%; /* Set the width of the table */
+  border-collapse: collapse; /* Collapse the border of the table */
 }
 article.league th,
 td {
-	border: 2px solid #ddd; /* Add a border to the cells */
-	text-align: left; /* Align the text to the left */
-	padding: 8px; /* Add padding to the cells */
+  border: 2px solid #ddd; /* Add a border to the cells */
+  text-align: left; /* Align the text to the left */
+  padding: 8px; /* Add padding to the cells */
 }
 article.league tbody tr:nth-child(odd) {
-	background-color: #444; /* Add a background color to every even row */
-	color: white;
+  background-color: #444; /* Add a background color to every even row */
+  color: white;
 }
 
 article.league td:first-child {
-	white-space: nowrap;
-	overflow: hidden;
-	text-overflow: ellipsis;
-	max-width: 100px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100px;
 }
 article.league td:last-child {
-	color: #00ae23;
-	font-weight: bolder;
+  color: #00ae23;
+  font-weight: bolder;
 }

@@ -4,8 +4,13 @@ import { LeagueInterface } from '../../domain/interfaces/league';
 import { trans } from '../../domain/translations';
 import { useSetAvatar } from '../_useSetAvatar';
 
-export function League({ league, leagueIndex }: { league: LeagueInterface; leagueIndex: number }) {
-  // eslint-disable-next-line @typescript-eslint/no-unsafe-call
+export function League({
+  league,
+  leagueIndex,
+}: {
+  league: LeagueInterface;
+  leagueIndex: number;
+}) {
   const avatar = league.players?.length ? league.players[0].avatar : '';
   useSetAvatar(leagueIndex, avatar as string);
 
