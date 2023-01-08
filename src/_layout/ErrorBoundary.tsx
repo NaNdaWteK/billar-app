@@ -1,38 +1,35 @@
-/* eslint-disable @typescript-eslint/unbound-method */
-import { Component, ErrorInfo, ReactNode } from "react";
-import { Link } from "react-router-dom";
+import { Component, ErrorInfo, ReactNode } from 'react';
+import { Link } from 'react-router-dom';
 
 export class ErrorBoundary extends Component<{ children: ReactNode }, { hasError: boolean }> {
-	state = {
-		hasError: false,
-	};
+  state = {
+    hasError: false,
+  };
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  public static getDerivedStateFromError(_: Error) {
+    return { hasError: true };
+  }
 
-	public static getDerivedStateFromError(_: Error) {
-		return { hasError: true };
-	}
+  public componentDidCatch(error: Error, errorInfo: ErrorInfo) {
+    console.error('Uncaught error:', error, errorInfo);
+  }
 
-	public componentDidCatch(error: Error, errorInfo: ErrorInfo) {
-		// You can also log the error to an error reporting service
-		console.error("Uncaught error:", error, errorInfo);
-	}
+  private resetError() {
+    this.setState({ hasError: false });
+  }
 
-	private resetError() {
-		this.setState({ hasError: false });
-	}
-
-	// eslint-disable-next-line @typescript-eslint/member-ordering
-	render() {
-		if (this.state.hasError) {
-			return (
-				<>
-					<h2>Something went wrong.</h2>
-					<Link onClick={this.resetError} to={"/"}>
+  render() {
+    if (this.state.hasError) {
+      return (
+        <>
+          <h2>Something went wrong.</h2>
+          <Link onClick={this.resetError} to={'/'}>
 						Return to home
-					</Link>
-				</>
-			);
-		}
+          </Link>
+        </>
+      );
+    }
 
-		return this.props.children;
-	}
+    return this.props.children;
+  }
 }

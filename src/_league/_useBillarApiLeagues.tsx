@@ -1,23 +1,23 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState } from 'react';
 
-import { LeagueInterface, LeagueServiceInterface } from "../domain/interfaces/league";
-import { dispatchPageLoaded } from "../events";
+import { LeagueInterface, LeagueServiceInterface } from '../domain/interfaces/league';
+import { dispatchPageLoaded } from '../events';
 
 export function useBillarApiLeagues(service: LeagueServiceInterface): {
 	leagues: LeagueInterface[];
 	isLoading: boolean;
 } {
-	const [isLoading, setIsLoading] = useState(true);
-	const [leagues, setLeagues] = useState<LeagueInterface[]>([]);
+  const [isLoading, setIsLoading] = useState(true);
+  const [leagues, setLeagues] = useState<LeagueInterface[]>([]);
 
-	useEffect(() => {
-		setIsLoading(true);
-		void service.findAll().then((response) => {
-			setLeagues(response);
-			setIsLoading(false);
-			dispatchPageLoaded();
-		});
-	}, [service]);
+  useEffect(() => {
+    setIsLoading(true);
+    void service.findAll().then((response) => {
+      setLeagues(response);
+      setIsLoading(false);
+      dispatchPageLoaded();
+    });
+  }, [service]);
 
-	return { leagues, isLoading };
+  return { leagues, isLoading };
 }

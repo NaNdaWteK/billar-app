@@ -10,3 +10,6 @@ node_modules/
 
 # Build output
 build
+
+# Developer content
+__*.txt
