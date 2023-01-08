@@ -1,4 +1,4 @@
-import { request } from '../../../../__core/Request';
+import { request } from '../../../../__core/request/Request';
 import {
   LeagueInterface,
   LeagueServiceInterface,

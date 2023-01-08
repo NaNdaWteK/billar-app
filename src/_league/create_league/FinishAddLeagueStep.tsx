@@ -11,7 +11,6 @@ export function FinishAddLeagueStep<T extends { [key: string]: string }>({
   handleSubmit,
 }: StepProps<T>) {
   const { next, prev, hasPrev, hasNext } = useSteps();
-  console.log(formData);
   return (
     <div>
       <h3>{trans('leagues.form.creating')}</h3>

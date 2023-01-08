@@ -1,4 +1,5 @@
 import './layout.css';
+import 'react-toastify/dist/ReactToastify.css';
 
 import { useEffect } from 'react';
 import { Outlet } from 'react-router-dom';
@@ -7,7 +8,7 @@ import { trans } from '../domain/translations';
 import { useTitleContextProvider } from './_TitleContextProvider';
 import { ErrorBoundary } from './ErrorBoundary';
 import TopBarProgressByLocation from './TopBarProgresByLocation';
-
+import { ToastContainer } from 'react-toastify';
 export function Layout() {
   const { title, component } = useTitleContextProvider();
   useEffect(() => {
@@ -23,6 +24,18 @@ export function Layout() {
     <>
       <aside className="form-background"></aside>
       <TopBarProgressByLocation />
+      <ToastContainer
+        position="top-right"
+        autoClose={8000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="dark"
+      />{' '}
       <header>
         <h1>{trans('layout.title')}</h1>
       </header>

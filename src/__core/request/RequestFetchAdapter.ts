@@ -1,14 +1,16 @@
-import { HTTPException } from './exceptions/HTTPException';
+import { HTTPException } from '../exceptions/HTTPException';
 
 export class RequestFetchAdapter {
   async http<T>(path: string, config: object): Promise<T> {
-    console.log(config);
+    config = {
+      ...config,
+      ...{ mode: 'cors', headers: { 'Content-Type': 'application/json' } },
+    };
     const response = await fetch(path, config);
 
     if (!response.ok) {
-      throw new HTTPException(response.statusText, {
-        status: response.status,
-        url: response.url,
+      return response.json().then((error) => {
+        throw new HTTPException(error.message, error.errors);
       });
     }
 
@@ -21,21 +23,13 @@ export class RequestFetchAdapter {
     return await this.http<T>(path, options);
   }
 
-  async post<T, U>(
-    path: string,
-    body: T,
-    config = { mode: 'cors', headers: { 'Content-Type': 'application/json' } }
-  ): Promise<U> {
+  async post<T, U>(path: string, body: T, config = {}): Promise<U> {
     const options = { method: 'post', body: JSON.stringify(body), ...config };
 
     return await this.http<U>(path, options);
   }
 
-  async put<T, U>(
-    path: string,
-    body: T,
-    config = { mode: 'cors', headers: { 'Content-Type': 'application/json' } }
-  ): Promise<U> {
+  async put<T, U>(path: string, body: T, config = {}): Promise<U> {
     const options = { method: 'put', body: JSON.stringify(body), ...config };
 
     return await this.http<U>(path, options);

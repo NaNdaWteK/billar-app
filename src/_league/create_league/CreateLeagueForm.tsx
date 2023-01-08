@@ -6,6 +6,7 @@ import { useStepForm } from '../../_shared/_useStepForm';
 import { LeagueServiceInterface } from '../../domain/interfaces/league';
 import { AddLeagueStep } from './AddLeagueStep';
 import { FinishAddLeagueStep } from './FinishAddLeagueStep';
+import { Toast } from '../../__core/toast/Toast';
 
 export function CreateLeagueForm({
   service,
@@ -16,11 +17,12 @@ export function CreateLeagueForm({
     useStepForm();
   const handleSubmit = async () => {
     if (formState.name && formState.type) {
-      if (formState.type === 'default') {
-        formState.type = 'Bola 8';
-      }
-      const result = await service.create(formState);
-      console.error(result);
+      Toast.promise(service.create(formState), {
+        pending: 'Creando tu liga...',
+        success: 'La Liga ha sido creada.',
+      });
+    } else {
+      Toast.error('Tienes que seleccionar un tipo de liga');
     }
   };
 
