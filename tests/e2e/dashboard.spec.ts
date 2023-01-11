@@ -6,6 +6,6 @@ describe('Dashboard', () => {
     cy.visit('/');
 
     cy.findByText('Liga 2022 - Bola 8').should('exist');
-    cy.findByText('Gestion de Torneos Billar').should('exist');
+    cy.findByText('Gestión de Torneos Billar').should('exist');
   });
 });
