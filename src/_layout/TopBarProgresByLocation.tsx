@@ -1,14 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
-import TopBarProgress from 'react-topbar-progress-indicator';
-
-TopBarProgress.config({
-  barColors: {
-    '0': '#fff',
-    '1.0': '#ff9c9c',
-  },
-  shadowBlur: 5,
-});
+import { BarProgress } from '../__core/ui/bar_progress/BarProgress';
 
 const TopBarProgressByLocation = () => {
   const [progress, setProgress] = useState(false);
@@ -39,7 +31,7 @@ const TopBarProgressByLocation = () => {
     return <></>;
   }
 
-  return <TopBarProgress />;
+  return <BarProgress />;
 };
 
 export default TopBarProgressByLocation;

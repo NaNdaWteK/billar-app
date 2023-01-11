@@ -6,7 +6,7 @@ import { useStepForm } from '../../_shared/_useStepForm';
 import { LeagueServiceInterface } from '../../domain/interfaces/league';
 import { AddLeagueStep } from './AddLeagueStep';
 import { FinishAddLeagueStep } from './FinishAddLeagueStep';
-import { Toast } from '../../__core/toast/Toast';
+import { Toast } from '../../__core/ui/toast/Toast';
 
 export function CreateLeagueForm({
   service,
