@@ -1,6 +1,13 @@
 import { HTTPException } from '../exceptions/HTTPException';
 
-export class RequestFetchAdapter {
+interface RequestInterface {
+  http<T>(path: string, config: object): Promise<T>;
+  get<T>(path: string, config: object): Promise<T>;
+  post<T, U>(path: string, body: T, config: object): Promise<U>;
+  put<T, U>(path: string, body: T, config: object): Promise<U>;
+}
+
+export class RequestFetchAdapter implements RequestInterface {
   async http<T>(path: string, config: object): Promise<T> {
     config = {
       ...config,

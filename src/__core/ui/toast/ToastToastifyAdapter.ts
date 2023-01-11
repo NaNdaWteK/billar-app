@@ -1,8 +1,16 @@
-import { toast, ToastContentProps } from 'react-toastify';
+/* eslint-disable  @typescript-eslint/no-explicit-any */
 
-export class ToastToastifyAdapter {
-  /* eslint-disable  @typescript-eslint/no-explicit-any */
-  static promise(
+import { toast, ToastContentProps } from 'react-toastify';
+export interface ToastInterface {
+  promise(
+    promise: Promise<any>,
+    message: { pending: string; success: string },
+    options: object
+  ): void;
+  error(message: string, options: object): void;
+}
+export class ToastToastifyAdapter implements ToastInterface {
+  promise(
     promise: Promise<any>,
     message: { pending: string; success: string },
     options = {}
@@ -22,7 +30,7 @@ export class ToastToastifyAdapter {
       },
     });
   }
-  static error(message: string, options = {}) {
+  error(message: string, options = {}) {
     toast.error(message);
   }
 }
