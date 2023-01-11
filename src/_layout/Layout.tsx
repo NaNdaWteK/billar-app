@@ -22,24 +22,24 @@ export function Layout() {
 
   return (
     <>
-      <aside className="form-background"></aside>
-      <TopBarProgressByLocation />
-      <ToastContainer
-        position="top-right"
-        autoClose={8000}
-        hideProgressBar={false}
-        newestOnTop={false}
-        closeOnClick
-        rtl={false}
-        pauseOnFocusLoss
-        draggable
-        pauseOnHover
-        theme="dark"
-      />{' '}
-      <header>
-        <h1>{trans('layout.title')}</h1>
-      </header>
       <ErrorBoundary>
+        <aside className="form-background"></aside>
+        <TopBarProgressByLocation />
+        <ToastContainer
+          position="top-right"
+          autoClose={5000}
+          hideProgressBar={false}
+          newestOnTop={false}
+          closeOnClick
+          rtl={false}
+          pauseOnFocusLoss
+          draggable
+          pauseOnHover
+          theme="dark"
+        />{' '}
+        <header>
+          <h1>{trans('layout.title')}</h1>
+        </header>
         <article className="content">
           <h2 className="title">
             {title}

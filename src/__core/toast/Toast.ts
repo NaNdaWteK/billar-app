@@ -1,3 +1,3 @@
 import { ToastToastifyAdapter } from './ToastToastifyAdapter';
 
-export class Toast extends ToastToastifyAdapter {}
+export const Toast = ToastToastifyAdapter;

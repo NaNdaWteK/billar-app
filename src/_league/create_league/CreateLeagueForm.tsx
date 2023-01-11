@@ -22,7 +22,7 @@ export function CreateLeagueForm({
         success: 'La Liga ha sido creada.',
       });
     } else {
-      Toast.error('Tienes que seleccionar un tipo de liga');
+      Toast.error('Tienes que seleccionar nombre y tipo de liga');
     }
   };
 
