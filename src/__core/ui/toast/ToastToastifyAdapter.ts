@@ -13,6 +13,7 @@ export class ToastToastifyAdapter implements ToastInterface {
   promise(
     promise: Promise<any>,
     message: { pending: string; success: string },
+    // eslint-disable-next-line  @typescript-eslint/no-unused-vars
     options = {}
   ) {
     toast.promise(promise, {
@@ -30,6 +31,7 @@ export class ToastToastifyAdapter implements ToastInterface {
       },
     });
   }
+  // eslint-disable-next-line  @typescript-eslint/no-unused-vars
   error(message: string, options = {}) {
     toast.error(message);
   }
