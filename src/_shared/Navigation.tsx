@@ -1,4 +1,5 @@
 import { MouseEventHandler } from 'react';
+import { trans } from '../domain/translations';
 
 export function Navigation(props: {
   prev: MouseEventHandler<HTMLButtonElement> | undefined;
@@ -15,15 +16,15 @@ export function Navigation(props: {
     <div className="navigation">
       <span style={prev}>
         <button onClick={props.prev} style={{ marginRight: 10 }}>
-          Previous
+          {trans('leagues.create.previous')}
         </button>
       </span>
       <span style={next}>
-        <button onClick={props.next}>Next</button>
+        <button onClick={props.next}>{trans('leagues.create.next')}</button>
       </span>
       <span style={finish}>
         <button className="finish" onClick={props.handleSubmit}>
-          Crear
+          {trans('leagues.create.button')}
         </button>
       </span>
     </div>

@@ -8,6 +8,7 @@ import { AddLeagueStep } from './AddLeagueStep';
 import { FinishAddLeagueStep } from './FinishAddLeagueStep';
 import { Toast } from '../../__core/ui/toast/Toast';
 import { selectElement } from '../../_shared/helpers';
+import { trans } from '../../domain/translations';
 
 export function CreateLeagueForm({
   service,
@@ -24,13 +25,13 @@ export function CreateLeagueForm({
   const handleSubmit = async () => {
     if (formState.name && formState.type) {
       Toast.promise(service.create(formState), {
-        pending: 'Creando tu liga...',
-        success: 'La Liga ha sido creada.',
+        pending: trans('leagues.form.creating'),
+        success: trans('leagues.form.created'),
       });
       const element = selectElement('.form-background');
       closeCreateLeagueFormAction(element);
     } else {
-      Toast.error('Tienes que seleccionar nombre y tipo de liga');
+      Toast.error(trans('leagues.create.error'));
     }
   };
 

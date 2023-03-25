@@ -1,3 +1,4 @@
+import { trans } from '../../src/domain/translations';
 import { leagues } from '../test_support/mocks';
 
 describe('LeaguesDashboard', () => {
@@ -7,7 +8,7 @@ describe('LeaguesDashboard', () => {
 
     cy.findByText('Liga 2022 - Bola 8').should('exist');
     cy.findByText('Inma').should('exist');
-    cy.findByText('Ligas').should('exist');
+    cy.findByText(trans('leagues.title')).should('exist');
   });
 });
 
@@ -29,15 +30,25 @@ describe('Create League Form', () => {
     cy.get('.add-form').click();
     cy.get('#leagueName').type('Liga 2024 - Bola 8');
     cy.get('#leagueType').select('Bola 8');
-    cy.findByText('Next').click();
+    cy.findByText(trans('leagues.create.next')).click();
 
     cy.findByText('Liga 2024 - Bola 8').should('exist');
     cy.findByText('del tipo Bola 8').should('exist');
 
-    cy.findByText('Crear').click();
+    cy.findByText(trans('leagues.create.button')).click();
 
-    cy.findByText('Creando tu liga...').should('exist');
-    cy.findByText('La Liga ha sido creada.').should('exist');
+    cy.findByText(trans('leagues.form.creating')).should('exist');
+    cy.findByText(trans('leagues.form.created')).should('exist');
+  });
+  it('need name to create a league', () => {
+    cy.intercept('/api/v1/league', leagues);
+    cy.visit('/leagues');
+
+    cy.get('.add-form').click();
+    cy.findByText(trans('leagues.create.next')).click();
+    cy.findByText(trans('leagues.create.button')).click();
+
+    cy.findByText(trans('leagues.create.error')).should('exist');
   });
   it('should be closed when clicking outside', () => {
     cy.intercept('/api/v1/league', leagues);
@@ -46,7 +57,7 @@ describe('Create League Form', () => {
     cy.get('.add-form').click();
     cy.get('#leagueName').type('Liga 2024 - Bola 8');
     cy.get('#leagueType').select('Bola 8');
-    cy.findByText('Next').click();
+    cy.findByText(trans('leagues.create.next')).click();
 
     cy.findByText('Liga 2024 - Bola 8').should('exist');
     cy.findByText('del tipo Bola 8').should('exist');
