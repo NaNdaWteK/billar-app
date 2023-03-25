@@ -3,7 +3,7 @@ import { useEffect, useMemo, useState } from 'react';
 export function useSetAvatar(leagueIndex: number, image: string): void {
   const element = document.querySelectorAll('article.league')[
     leagueIndex
-  ] as HTMLDivElement;
+  ] as HTMLElement;
   const [avatar, setAvatar] = useState('');
   const memoizedAvatar = useMemo(() => avatar, [avatar]);
   useEffect(() => {

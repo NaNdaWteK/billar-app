@@ -7,6 +7,7 @@ import { LeagueServiceInterface } from '../../domain/interfaces/league';
 import { AddLeagueStep } from './AddLeagueStep';
 import { FinishAddLeagueStep } from './FinishAddLeagueStep';
 import { Toast } from '../../__core/ui/toast/Toast';
+import { selectElement } from '../../_shared/helpers';
 
 export function CreateLeagueForm({
   service,
@@ -26,9 +27,7 @@ export function CreateLeagueForm({
         pending: 'Creando tu liga...',
         success: 'La Liga ha sido creada.',
       });
-      const element = document.querySelectorAll(
-        '.form-background'
-      )[0] as HTMLDivElement;
+      const element = selectElement('.form-background');
       closeCreateLeagueFormAction(element);
     } else {
       Toast.error('Tienes que seleccionar nombre y tipo de liga');

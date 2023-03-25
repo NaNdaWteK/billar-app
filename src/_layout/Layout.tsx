@@ -9,13 +9,12 @@ import { useTitleContextProvider } from './_TitleContextProvider';
 import { ErrorBoundary } from './ErrorBoundary';
 import TopBarProgressByLocation from './TopBarProgresByLocation';
 import { ToastContainer } from 'react-toastify';
+import { selectElement } from '../_shared/helpers';
 export function Layout() {
   const { title, component } = useTitleContextProvider();
   useEffect(() => {
     if (title) {
-      const element = document.querySelector(
-        'h2.title'
-      ) as unknown as HTMLTitleElement;
+      const element = selectElement('h2.title') as unknown as HTMLTitleElement;
       element.style.setProperty('--title-width', `-${title.length}%`);
     }
   }, [title]);

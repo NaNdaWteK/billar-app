@@ -7,7 +7,7 @@ export function useStepForm(): {
   handleShowMultiStep: () => void;
   formState: { [key: string]: string };
   setFormState: React.Dispatch<React.SetStateAction<{}>>;
-  closeCreateLeagueFormAction: (element: HTMLDivElement) => void;
+  closeCreateLeagueFormAction: (element: HTMLElement) => void;
   } {
   const [showMultiStep, setShowMultiStep] = useState(false);
 
@@ -27,13 +27,13 @@ export function useStepForm(): {
     closeCreateLeagueFormAction,
   };
 
-  function closeCreateLeagueForm(element: HTMLDivElement) {
+  function closeCreateLeagueForm(element: HTMLElement) {
     element.addEventListener('click', () => {
       closeCreateLeagueFormAction(element);
     });
   }
 
-  function closeCreateLeagueFormAction(element: HTMLDivElement) {
+  function closeCreateLeagueFormAction(element: HTMLElement) {
     hideElement(element);
     setShowMultiStep(false);
   }
