@@ -17,7 +17,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "serve": "serve -s build",
+    "serve": "npx serve -s build",
     "build": "react-scripts build",
     "test": "jest  --config=jest.config.js",
     "eject": "react-scripts eject",

@@ -4,6 +4,10 @@ body {
   box-sizing: border-box; /* Opera/IE 8+ */
   background-color: #2d2d2d;
 }
+.error-boundary,
+.content {
+  color: #fff;
+}
 .form-background {
   position: absolute;
   top: 0;
@@ -63,4 +67,8 @@ article.content {
   position: relative;
   max-width: 1024px;
   margin: auto;
+}
+
+thead > tr {
+  color: #000;
 }

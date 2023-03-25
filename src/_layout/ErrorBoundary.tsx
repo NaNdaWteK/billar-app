@@ -26,10 +26,12 @@ export class ErrorBoundary extends Component<
     if (this.state.hasError) {
       return (
         <>
-          <h2>Something went wrong.</h2>
-          <Link onClick={this.resetError} to={'/'}>
-            Return to home
-          </Link>
+          <div className="error-boundary">
+            <h2>Something went wrong.</h2>
+            <Link onClick={this.resetError} to={'/'}>
+              Return to home
+            </Link>
+          </div>
         </>
       );
     }
