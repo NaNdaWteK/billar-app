@@ -20,3 +20,23 @@ describe('League Detail', () => {
     cy.findByText('Inma').should('exist');
   });
 });
+
+describe('League Create', () => {
+  it('can create a league', () => {
+    cy.intercept('/api/v1/league', leagues);
+    cy.visit('/leagues');
+
+    cy.get('.add-form').click();
+    cy.get('#leagueName').type('Liga 2024 - Bola 8');
+    cy.get('#leagueType').select('Bola 8');
+    cy.findByText('Next').click();
+
+    cy.findByText('Liga 2024 - Bola 8').should('exist');
+    cy.findByText('del tipo Bola 8').should('exist');
+
+    cy.findByText('Crear').click();
+
+    cy.findByText('Creando tu liga...').should('exist');
+    cy.findByText('La Liga ha sido creada.').should('exist');
+  });
+});

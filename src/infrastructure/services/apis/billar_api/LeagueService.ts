@@ -3,7 +3,6 @@ import {
   LeagueInterface,
   LeagueServiceInterface,
 } from '../../../../domain/interfaces/league';
-// import { leagues } from './mocks';
 
 export class LeagueService implements LeagueServiceInterface {
   constructor(private readonly billarApiUrl: string) {}

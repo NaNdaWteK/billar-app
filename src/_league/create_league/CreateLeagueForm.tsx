@@ -13,14 +13,23 @@ export function CreateLeagueForm({
 }: {
   service: LeagueServiceInterface;
 }) {
-  const { showMultiStep, handleShowMultiStep, formState, setFormState } =
-    useStepForm();
+  const {
+    showMultiStep,
+    handleShowMultiStep,
+    closeCreateLeagueFormAction,
+    formState,
+    setFormState,
+  } = useStepForm();
   const handleSubmit = async () => {
     if (formState.name && formState.type) {
       Toast.promise(service.create(formState), {
         pending: 'Creando tu liga...',
         success: 'La Liga ha sido creada.',
       });
+      const element = document.querySelectorAll(
+        '.form-background'
+      )[0] as HTMLDivElement;
+      closeCreateLeagueFormAction(element);
     } else {
       Toast.error('Tienes que seleccionar nombre y tipo de liga');
     }
