@@ -12,6 +12,9 @@ COPY . .
 
 RUN npm run build
 
+RUN adduser -D appuser
+USER appuser
+
 EXPOSE 3000
 
 CMD [ "npm", "run", "serve" ]
