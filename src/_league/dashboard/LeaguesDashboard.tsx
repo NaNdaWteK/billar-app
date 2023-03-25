@@ -33,7 +33,9 @@ export function LeaguesDashboard({
       )}
       {!isLoading && leagues.length === 0 ? (
         <div>
-          <span>{trans('leagues.league.noleagues')}</span>
+          <span className="no-leagues">
+            {trans('leagues.league.noleagues')}
+          </span>
         </div>
       ) : (
         <section className="leagues">

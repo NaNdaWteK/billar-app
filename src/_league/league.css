@@ -46,6 +46,13 @@ section.create-league-form .navigation button.finish {
   border: 2px solid #fff;
 }
 
+.no-leagues {
+  text-align: center;
+  font-size: 1.2em;
+  color: #fff;
+  margin-top: 100px;
+}
+
 section.create-league-form {
   box-shadow: 1px 1px 1px #ece6b0, 0 0 18px #ece6b0;
   padding: 1.7em;
