@@ -25,7 +25,13 @@ jobs:
         run: cp .env.example .env
 
       - name: Test
-        run: npx jest --config=jest.config.js
+        run: npx jest --config=jest.config.js  --coverage
+      - name: SonarQube Scan
+        uses: SonarSource/sonarqube-scan-action@master
+        env:
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+          SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
+
   e2e:
     runs-on: ubuntu-latest
 
